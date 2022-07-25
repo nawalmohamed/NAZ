@@ -1,0 +1,24 @@
+var Pictures;
+
+
+Pictures = ['https://i.postimg.cc/wj4CX1tf/image-123986672-4.jpg', 'https://i.postimg.cc/x14wKwwK/image-6483441.jpg', 'https://i.postimg.cc/cCLhkHY6/image-6483441-2.jpg', 'https://i.postimg.cc/MTPVTYMK/image-6483441-7.jpg', 'https://i.postimg.cc/x8fprgrf/image-6483441-1.jpg', 'https://i.postimg.cc/gkwqx1K9/image-6483441-6.jpg', 'https://i.postimg.cc/1RdD1J1v/image-6483441-11.jpg', 'https://i.postimg.cc/zDnJYv1Q/image-123986672-2.jpg', 'https://i.postimg.cc/s1FBQHVy/image-6483441-12.jpg', 'https://i.postimg.cc/c4s2PRwk/image-123986672-3.jpg'];
+let element_image = document.getElementById('image');
+element_image.style.color = '#cc33cc';
+element_image.style.backgroundColor = '#cc33cc';
+Pictures.push(Pictures[0]);
+element_image.setAttribute("src", Pictures.shift());
+
+
+document.getElementById('turn').addEventListener('click', (event) => {
+  let element_image2 = document.getElementById('image');
+  Pictures.push(Pictures[0]);
+  element_image2.setAttribute("src", Pictures.shift());
+
+});
+
+document.getElementById('turn ').addEventListener('click', (event) => {
+  let element_image3 = document.getElementById('image');
+  Pictures.unshift(Pictures.slice(-1)[0]);
+  element_image3.setAttribute("src", Pictures.pop());
+
+});
